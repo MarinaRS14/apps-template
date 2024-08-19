@@ -6,6 +6,8 @@ import FormWithFormik from './components/FormWithFormik';
 
 import './App.css';
 import { Hookform } from './components/react-hook-form';
+import { CounterWithHOC, HighOrderComponentExample } from './components/hoc';
+import { Counter } from './components/hoc/counter';
 
 const App = () => {
   return (
@@ -28,7 +30,9 @@ const App = () => {
         </Routes>
       </div>
 
-      <Hookform />
+      {/* <Hookform /> */}
+      <CounterWithHOC />
+      <Counter />
     </div>
   );
 };
