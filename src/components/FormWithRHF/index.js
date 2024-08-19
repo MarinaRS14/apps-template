@@ -1,15 +1,15 @@
-import { useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form';
 
 const FormWithRHFController = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
-  } = useForm()
+    formState: { errors },
+  } = useForm();
 
-  const onSubmit = data => {
-    console.log(data)
-  }
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -22,32 +22,32 @@ const FormWithRHFController = () => {
           required: 'Обязательное поле',
           pattern: {
             value: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/,
-            message: 'Введите валидный email'
-          }
+            message: 'Введите валидный email',
+          },
         })}
       />
       <p>{errors.email?.message}</p>
       <label>Возраст:</label>
       <input
-        type='number'
+        type="number"
         {...register('age', {
           required: 'Обязательное поле',
           min: {
             value: 18,
-            message: 'Вам должно быть 18 лет или больше'
-          }
+            message: 'Вам должно быть 18 лет или больше',
+          },
         })}
       />
       <p>{errors.age?.message}</p>
       <label>Пол:</label>
       <input
-        type='number'
+        type="number"
         {...register('age', {
           required: 'Обязательное поле',
           min: {
             value: 18,
-            message: 'Вам должно быть 18 лет или больше'
-          }
+            message: 'Вам должно быть 18 лет или больше',
+          },
         })}
       />
       <p>{errors.age?.message}</p>
@@ -55,36 +55,33 @@ const FormWithRHFController = () => {
       <label>Пол:</label>
       <div>
         <label>
-          <input
-            type='radio'
-            {...register('gender', { required: 'Выберите пол' })}
-            value='male'
-          />
+          <input type="radio" {...register('gender', { required: 'Выберите пол' })} value="male" />
           Мужской
         </label>
         <label>
           <input
-            type='radio'
+            type="radio"
             {...register('gender', { required: 'Выберите пол' })}
-            value='female'
+            value="female"
           />
           Женский
         </label>
       </div>
       <p>{errors.gender?.message}</p>
+
       <label>
         <input
-          type='checkbox'
+          type="checkbox"
           {...register('acceptedTerms', {
-            required: 'Вы должны принять условия'
+            required: 'Вы должны принять условия',
           })}
         />
         Принимаю условия
       </label>
       <p>{errors.acceptedTerms?.message}</p>
-      <button type='submit'>Отправить</button>
+      <button type="submit">Отправить</button>
     </form>
-  )
-}
+  );
+};
 
-export default FormWithRHFController
+export default FormWithRHFController;

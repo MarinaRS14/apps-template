@@ -1,14 +1,15 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom';
 
-import FormWithRHF from './components/FormWithRHF'
-import FormWithRHFController from './components/FormWithRHFController'
-import FormWithFormik from './components/FormWithFormik'
+import FormWithRHF from './components/FormWithRHF';
+import FormWithRHFController from './components/FormWithRHFController';
+import FormWithFormik from './components/FormWithFormik';
 
-import './App.css'
+import './App.css';
+import { Hookform } from './components/react-hook-form';
 
 const App = () => {
   return (
-    <div className='App'>
+    <div className="App">
       <div>
         <Link to={'/form-rhf'}> FormWithRHF</Link>
       </div>
@@ -21,16 +22,15 @@ const App = () => {
 
       <div style={{ marginTop: '10%' }}>
         <Routes>
-          <Route path='/form-rhf' element={<FormWithRHF />} />
-          <Route
-            path='/form-rhf-controller'
-            element={<FormWithRHFController />}
-          />
-          <Route path='/form-formik' element={<FormWithFormik />} />
+          <Route path="/form-rhf" element={<FormWithRHF />} />
+          <Route path="/form-rhf-controller" element={<FormWithRHFController />} />
+          <Route path="/form-formik" element={<FormWithFormik />} />
         </Routes>
       </div>
-    </div>
-  )
-}
 
-export default App
+      <Hookform />
+    </div>
+  );
+};
+
+export default App;
